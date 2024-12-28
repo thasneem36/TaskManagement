@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+header nav{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style: none;
+    margin-right: 100px;
+}
+nav ul li{
+    display: inline-block;
+    padding: 10px;
+    transition: all 0.2s;
+}
+nav ul li:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+
+.main{
+    text-align: center;
+
+    display: inline-block;
+    position: relative;
+
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.main h1{
+    font-size: 60px;
+    text-transform: uppercase;
+}
+.main p{
+    font-size: 20px;
+    text-transform: capitalize;
+}
