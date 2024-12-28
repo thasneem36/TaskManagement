@@ -1,3 +1,30 @@
+<?php
+
+include ("../db_connection.php");
+
+// if($_SERVER['REQUEST_METHOD'] == "POST")
+if (isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE username='$username' and PASSWORD = '$password';";
+
+    // mysqli_query($conn,$sql)
+    $result = $conn->query($sql);
+
+    if($result->num_rows>0){
+        session_start();
+        header("Location: ../users/user.html");
+    }else{
+        echo "Invalid username or password";
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +39,15 @@
         <h1>login page</h1>
         
         <div class="signupFrom">
-            <form action="#">
+            <form action="./login.php" method="post">
 
                 <label for="username">UserName</label>
-                <input type="text" placeholder="Enter Your Username" required>
+                <input type="text" name="username" placeholder="Enter Your Username" required>
 
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="enter your password" required>
 
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" name="login">
 
             </form>
             <div class="loginBtn">
