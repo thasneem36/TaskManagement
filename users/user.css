@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header nav p{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 0 10px;
+    list-style: none;
+    padding: 10px;
+}
+header nav ul li:hover{
+    background-color: #d6d6d6;
+}
+
+
+
+.container{
+    /* display: inline-block; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top:20px;
+    padding: 10px;
+    width: 20%;
+}
+.container h1{
+    margin-bottom: 10px;
+}
+
+.container form label,input{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.container form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.container form input[type="submit"]{
+    font-weight: bold;
+}
+.container form input[type="submit"]:hover{
+    background-color: #d6d6d6;
+}
+
+
+.container form select{
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.username{
+    padding: 20px;
+    text-transform: capitalize;
+    background-color: #d6d6d6;
+    display: inline-block;
+    position: absolute;
+    margin-top: 50px;
+}
+.username span{
+    text-transform: uppercase;
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+

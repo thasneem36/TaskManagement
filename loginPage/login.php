@@ -13,8 +13,11 @@ if (isset($_POST['login'])){
     $result = $conn->query($sql);
 
     if($result->num_rows>0){
+
         session_start();
-        header("Location: ../users/user.html");
+        $_SESSION['username'] = $username;
+
+        header("Location: ../users/user.php");
     }else{
         echo "Invalid username or password";
     }
