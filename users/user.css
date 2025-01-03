@@ -89,3 +89,33 @@ header nav ul li:hover{
 }
 
 
+.task_list{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+}
+
+.task_list table{
+    width: 400px;
+}
+
+.task_list table .fixTR{
+    background-color: rgb(209, 212, 241);
+}
+
+.task_list table tr{
+    height: 40px;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    text-transform: capitalize;
+}
+.task_list table tr:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.task_list table .importanceColor{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: green;
+}

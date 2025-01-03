@@ -12,13 +12,20 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     $task = $_POST['task'];
     $importance = $_POST['importance'];
 
-    $sql = "INSERT INTO task(task,importance) VALUES ('$task','$importance')";
+    $sql = "SELECT * FROM tasks WHERE task= '$task' AND importance = '$importance'";
+    $result = $conn->query($sql);
 
-    if($conn->query($sql) === TRUE){
-        echo "Task added";
-    }else{
-        echo "Error".$conn->error;
+    if( !$result->num_rows > 0){
+        $insert_sql = "INSERT INTO tasks(task,importance) VALUES ('$task','$importance')";
+    
+        if($conn->query($insert_sql) === TRUE){
+            echo "Task added";
+        }else{
+            echo "Error".$conn->error;
+        }
     }
+    
+    
 }
 
 ?>
@@ -70,5 +77,28 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         </form>
     </div>
     
+    <div class="task_list">
+        <table>
+            <tr class="fixTR">
+                <th>Task</th>
+                <th>Importance Level</th>
+            </tr>
+            <?php
+            $sql = "SELECT * FROM tasks ORDER BY created_at DESC";
+            $result = $conn->query($sql);
+
+            if( $result->num_rows>0){
+                
+                while( $task = $result->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td>" . $task['task'] . "</td>";
+                    echo "<td class='importanceColor'>" . $task['importance'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+            ?>
+        </table>
+    </div>
+
 </body>
 </html>

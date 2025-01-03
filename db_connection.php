@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db_name = "taskmanagement";
+$db_name = "task_management";
 
 $conn = mysqli_connect($servername,$username,$password,$db_name);
 
